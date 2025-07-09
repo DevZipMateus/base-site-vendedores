@@ -25,7 +25,7 @@ const NFePlusSection = () => {
             <img 
               src="/lovable-uploads/32c21c99-dc8c-4b2f-9324-3265919560f6.png" 
               alt="Sistema NFe+" 
-              className="w-full aspect-video object-cover"
+              className="w-full h-auto max-w-full object-contain md:object-cover md:aspect-video"
             />
           </div>
         </div>
