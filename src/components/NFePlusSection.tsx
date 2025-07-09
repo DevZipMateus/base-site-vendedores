@@ -23,7 +23,7 @@ const NFePlusSection = () => {
           {/* Right column - Image Container */}
           <div className="md:w-1/2 rounded-xl overflow-hidden shadow-card animate-fade-in">
             <img 
-              src="/lovable-uploads/7470d62d-5d02-4789-a2ad-c33268969743.png" 
+              src="/lovable-uploads/32c21c99-dc8c-4b2f-9324-3265919560f6.png" 
               alt="Sistema NFe+" 
               className="w-full aspect-video object-cover"
             />
