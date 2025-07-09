@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 const EgestorERP = () => {
   // Link for both the title and button
   const egestorLink = "https://wa.me/5555981311402?text=Olá! Tenho interesse no sistema EgestoERP.";
@@ -9,11 +10,11 @@ const EgestorERP = () => {
         <div className="flex flex-col md:flex-row md:items-center md:gap-8 lg:gap-12 mb-10">
           {/* Left column - Header Text */}
           <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 animate-fade-in">
-            <a href={egestorLink} target="_blank" rel="noopener noreferrer" className="inline-block hover:opacity-90 transition-opacity">
+            <Link to="/egestor" className="inline-block hover:opacity-90 transition-opacity">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
                 Sistema de gestão empresarial
               </h2>
-            </a>
+            </Link>
             <p className="text-lg md:text-xl text-muted-foreground font-normal">
               Dobre seus lucros otimizando sua gestão
             </p>
@@ -30,9 +31,9 @@ const EgestorERP = () => {
         
         {/* CTA Button - Centered below both columns */}
         <div className="flex justify-center animate-fade-in">
-          <a href={egestorLink} target="_blank" rel="noopener noreferrer" className="inline-block w-full max-w-sm">
+          <Link to="/egestor" className="inline-block w-full max-w-sm">
             <Button className="w-full py-3 bg-gradient-primary hover:shadow-glow text-primary-foreground font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]">SAIBA MAIS</Button>
-          </a>
+          </Link>
         </div>
       </div>
     </section>;
