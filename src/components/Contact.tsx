@@ -1,0 +1,107 @@
+import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+const contactMethods = [
+  {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    value: "(55) 98131-1402",
+    action: () => window.open('https://wa.me/5555981311402', '_blank'),
+    primary: true
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    value: "davi.moraes@zipline.com.br",
+    action: () => window.open('mailto:davi.moraes@zipline.com.br', '_blank'),
+    primary: false
+  },
+  {
+    icon: Phone,
+    title: "Telefone",
+    value: "(55) 98131-1402",
+    action: () => window.open('tel:+5555981311402', '_blank'),
+    primary: false
+  },
+  {
+    icon: MapPin,
+    title: "Localização",
+    value: "Santa Maria, RS",
+    action: () => {},
+    primary: false
+  }
+];
+
+const Contact = () => {
+  return (
+    <section className="py-20 px-4 bg-gradient-to-t from-background to-secondary/30 relative">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(270_85%_25%),transparent_50%)] opacity-40" />
+      
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+            Vamos Conversar?
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Comunicável, esforçado e observador. Pronto para transformar suas ideias em realidade digital.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {contactMethods.map((method, index) => (
+            <Card 
+              key={index}
+              className={`bg-card/50 backdrop-blur-sm border-border/50 hover:border-purple-glow/50 transition-all duration-300 hover:shadow-glow group cursor-pointer ${
+                method.primary ? 'ring-2 ring-purple-glow/30' : ''
+              }`}
+              onClick={method.action}
+            >
+              <CardContent className="p-6 text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className={`p-4 rounded-full ${
+                    method.primary ? 'bg-gradient-primary animate-glow-pulse' : 'bg-secondary group-hover:bg-gradient-primary'
+                  } transition-all duration-300`}>
+                    <method.icon className={`h-6 w-6 ${
+                      method.primary ? 'text-primary-foreground' : 'text-foreground group-hover:text-primary-foreground'
+                    }`} />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                  {method.title}
+                </h3>
+                <p className={`${
+                  method.primary ? 'text-purple-glow font-medium' : 'text-muted-foreground'
+                }`}>
+                  {method.value}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        
+        <div className="text-center space-y-6">
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-foreground">
+              Pronto para começar seu projeto?
+            </h3>
+            <p className="text-muted-foreground">
+              Clique no botão abaixo e vamos conversar sobre como posso ajudar você
+            </p>
+          </div>
+          
+          <Button 
+            onClick={() => window.open('https://wa.me/5555981311402?text=Olá Davi! Vi seu portfólio e gostaria de conversar sobre um projeto.', '_blank')}
+            size="lg"
+            className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-4 animate-glow-pulse"
+          >
+            <MessageCircle className="mr-2 h-5 w-5" />
+            Começar Projeto
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
