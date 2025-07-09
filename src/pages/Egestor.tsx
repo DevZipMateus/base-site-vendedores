@@ -24,14 +24,22 @@ import {
   Phone,
   MessageCircle
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Egestor = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-hero">
       {/* Navigation Back */}
       <div className="fixed top-4 left-4 z-50">
         <Button 
-          onClick={() => window.location.href = '/'}
+          onClick={() => navigate('/')}
           variant="outline"
           className="bg-background/80 backdrop-blur-sm border-purple-glow/30 hover:bg-purple-glow/10"
         >

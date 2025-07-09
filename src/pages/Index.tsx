@@ -7,14 +7,17 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation to other pages */}
       <div className="fixed top-4 right-4 z-50 flex gap-2">
         <Button 
-          onClick={() => window.location.href = '/egestor'}
+          onClick={() => navigate('/egestor')}
           variant="outline"
           className="bg-background/80 backdrop-blur-sm border-purple-glow/30 hover:bg-purple-glow/10"
         >
@@ -22,7 +25,7 @@ const Index = () => {
           eGestor
         </Button>
         <Button 
-          onClick={() => window.location.href = '/nfe-plus'}
+          onClick={() => navigate('/nfe-plus')}
           className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
         >
           <ExternalLink className="mr-2 h-4 w-4" />

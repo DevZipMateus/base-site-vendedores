@@ -7,14 +7,22 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const NFePlus = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation back to main site */}
       <div className="fixed top-4 left-4 z-50">
         <Button 
-          onClick={() => window.location.href = '/'}
+          onClick={() => navigate('/')}
           variant="outline"
           className="border-purple-glow text-purple-glow hover:bg-purple-glow hover:text-background transition-all duration-300"
         >
