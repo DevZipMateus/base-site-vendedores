@@ -214,7 +214,7 @@ const Egestor = () => {
               <Button 
                 size="lg" 
                 className="bg-background text-primary hover:bg-background/90 text-xl px-8 py-6 rounded-xl shadow-glow animate-glow-pulse"
-                onClick={() => window.open('https://wa.me/5511999999999', '_blank')}
+                onClick={() => window.open('https://wa.me/5511979794151', '_blank')}
               >
                 <MessageCircle className="mr-3 h-6 w-6" />
                 📲 QUERO MINHA LOJA VIRTUAL
