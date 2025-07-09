@@ -1,13 +1,10 @@
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const NFePlusHero = () => {
   const handleContact = () => {
     window.open('https://wa.me/5555981311402', '_blank');
   };
-
-  return (
-    <section className="min-h-screen bg-gradient-hero flex items-center justify-center px-4 relative overflow-hidden">
+  return <section className="min-h-screen bg-gradient-hero flex items-center justify-center px-4 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(270_85%_15%),transparent_50%)]" />
       <div className="absolute top-20 left-20 w-96 h-96 bg-purple-glow opacity-10 rounded-full blur-3xl animate-float" />
@@ -42,26 +39,14 @@ const NFePlusHero = () => {
           </div>
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Button 
-              onClick={handleContact}
-              size="lg"
-              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-4"
-            >
+            <Button onClick={handleContact} size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-4">
               Falar com Representante
             </Button>
             
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-purple-glow text-purple-glow hover:bg-purple-glow hover:text-background transition-all duration-300 text-lg px-8 py-4"
-            >
-              Ver Demonstração
-            </Button>
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default NFePlusHero;
