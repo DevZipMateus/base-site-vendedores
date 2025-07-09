@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import Qualifications from "@/components/Qualifications";
 import Services from "@/components/Services";
+import EgestorERP from "@/components/EgestorERP";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -25,6 +26,7 @@ const Index = () => {
       <Experience />
       <Qualifications />
       <Services />
+      <EgestorERP />
       <Contact />
       <Footer />
     </div>
