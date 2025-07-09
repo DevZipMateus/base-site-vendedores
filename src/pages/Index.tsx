@@ -11,8 +11,16 @@ import { ExternalLink } from "lucide-react";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation to NFe+ */}
-      <div className="fixed top-4 right-4 z-50">
+      {/* Navigation to other pages */}
+      <div className="fixed top-4 right-4 z-50 flex gap-2">
+        <Button 
+          onClick={() => window.location.href = '/egestor'}
+          variant="outline"
+          className="bg-background/80 backdrop-blur-sm border-purple-glow/30 hover:bg-purple-glow/10"
+        >
+          <ExternalLink className="mr-2 h-4 w-4" />
+          eGestor
+        </Button>
         <Button 
           onClick={() => window.location.href = '/nfe-plus'}
           className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
