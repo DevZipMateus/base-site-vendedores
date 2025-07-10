@@ -25,19 +25,18 @@ const Hero = () => {
               Closer
             </p>
             <p className="text-lg text-muted-foreground">
-              Especialista em SaaS • Santa Maria
+              Especialista em SaaS em toda região nacional
             </p>
           </div>
           
           <div className="space-y-6">
             <p className="text-lg text-foreground leading-relaxed">
-              Especialista em SaaS com foco em e-commerce. Ajudo empresas a 
-              aumentarem suas vendas online através de estratégias personalizadas e 
-              soluções tecnológicas inovadoras.
+              Ajudo sua empresa a crescer mais com soluções para gestão da sua empresa e
+              posicionamento digital da sua marca para alavancar suas vendas e torna-la visível no mercado onde atua.
             </p>
             
             <blockquote className="text-xl italic text-accent border-l-4 border-primary pl-6">
-              "Transformando negócios através do digital"
+              "Soluções que te ajuda a crescer!"
             </blockquote>
           </div>
           
