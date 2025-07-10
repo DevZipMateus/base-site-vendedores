@@ -1,0 +1,81 @@
+
+/* Tema personalizado para NFe+ - cores verdes */
+.nfe-plus-theme {
+  /* Cores principais do NFe+ */
+  --primary: 150 100% 32%; /* #00a551 */
+  --primary-foreground: 0 0% 100%;
+  
+  --accent: 150 80% 40%; /* Tom de verde mais claro */
+  --accent-foreground: 0 0% 100%;
+  
+  /* Cores de destaque para harmonizar */
+  --purple-glow: 150 70% 45%; /* Verde brilhante */
+  --blue-primary: 150 100% 32%;
+  --blue-secondary: 150 80% 38%;
+  --blue-dark: 150 100% 25%;
+  
+  /* Gradientes atualizados */
+  --gradient-primary: linear-gradient(135deg, hsl(150 100% 32%), hsl(150 80% 40%));
+  --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(150 15% 95%));
+  
+  /* Sombras e efeitos */
+  --shadow-glow: 0 0 30px hsl(150 100% 32% / 0.3);
+}
+
+/* Classe específica para o texto com gradient do NFe+ */
+.nfe-plus-gradient-text {
+  /* Fallback: cor sólida caso o gradient não funcione */
+  color: hsl(150 100% 32%) !important;
+  
+  /* Gradient aplicado */
+  background: linear-gradient(135deg, hsl(150 100% 32%), hsl(150 80% 40%)) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  
+  /* Fallback para navegadores muito antigos */
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  
+  /* Garantir que o texto seja legível em caso de falha total */
+  text-shadow: none !important;
+}
+
+/* Fallback adicional para casos extremos */
+.nfe-plus-gradient-text::before {
+  content: attr(data-text);
+  position: absolute;
+  color: hsl(150 100% 32%);
+  z-index: -1;
+  opacity: 0;
+}
+
+/* Se o gradient falhar, mostrar o fallback */
+@supports not (background-clip: text) {
+  .nfe-plus-gradient-text {
+    color: hsl(150 100% 32%) !important;
+    background: none !important;
+    -webkit-text-fill-color: inherit !important;
+  }
+}
+
+/* Aplicar tema apenas quando a classe nfe-plus-theme estiver presente */
+.nfe-plus-theme .border-purple-glow {
+  border-color: hsl(150 70% 45%) !important;
+}
+
+.nfe-plus-theme .text-purple-glow {
+  color: hsl(150 70% 45%) !important;
+}
+
+.nfe-plus-theme .hover\:bg-purple-glow:hover {
+  background-color: hsl(150 70% 45%) !important;
+}
+
+.nfe-plus-theme .bg-purple-glow {
+  background-color: hsl(150 70% 45%) !important;
+}
+
+.nfe-plus-theme .border-purple-glow\/30 {
+  border-color: hsl(150 70% 45% / 0.3) !important;
+}

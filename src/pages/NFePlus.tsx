@@ -1,3 +1,4 @@
+
 import NFePlusHero from "@/components/NFePlusHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import ExplanationSections from "@/components/ExplanationSections";
@@ -9,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import "@/styles/nfe-plus-theme.css";
 
 const NFePlus = () => {
   const navigate = useNavigate();
@@ -18,7 +20,7 @@ const NFePlus = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background nfe-plus-theme">
       {/* Navigation back to main site */}
       <div className="fixed top-4 left-4 z-50">
         <Button 
