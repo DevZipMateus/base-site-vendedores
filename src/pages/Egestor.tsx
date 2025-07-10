@@ -54,7 +54,7 @@ const Egestor = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Crie sua Loja Virtual com o{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
+            <span className="egestor-gradient-text" data-text="eGestor">
               eGestor
             </span>
           </h1>
