@@ -58,11 +58,11 @@ const Hero = () => {
         </div>
         
         {/* Profile Image */}
-        <div className="flex justify-center">
-          <div className="relative">
+        <div className="flex justify-center h-full">
+          <div className="relative h-full flex items-end">
             <img 
               alt="Daniel Escobar" 
-              className="w-[32rem] h-auto max-w-full object-cover" 
+              className="h-[90vh] w-auto max-w-full object-cover object-bottom" 
               src="/lovable-uploads/c8a5b401-2e69-42e6-a5e0-e64816bbeb21.png" 
             />
           </div>
