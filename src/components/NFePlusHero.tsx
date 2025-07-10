@@ -1,3 +1,4 @@
+
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -20,7 +21,7 @@ const NFePlusHero = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
               Emissor de Nota Fiscal Eletrônica Grátis — <span className="nfe-plus-gradient-text" data-text="NFe+">NFe+</span>
             </h1>
-            <p className="text-xl md:text-2xl text-purple-glow font-medium max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-foreground font-medium max-w-4xl mx-auto">
               Simples, completo e com planos exclusivos para contadores!
             </p>
           </div>
