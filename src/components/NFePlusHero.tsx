@@ -9,9 +9,6 @@ const NFePlusHero = () => {
 
   return (
     <section className="min-h-screen bg-gradient-hero flex items-center justify-center px-4 relative overflow-hidden">
-      {/* Background effects - removed circles */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(150_85%_15%),transparent_50%)]" />
-      
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <div className="space-y-8">
           {/* Main Title */}
