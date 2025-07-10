@@ -1,3 +1,4 @@
+
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import Qualifications from "@/components/Qualifications";
@@ -17,6 +18,14 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Navigation to other pages */}
       <div className="fixed top-4 right-4 z-50 flex gap-2">
+        <Button 
+          onClick={() => navigate('/monte-site')}
+          variant="outline"
+          className="bg-background/80 backdrop-blur-sm border-border/30 hover:bg-accent/10"
+        >
+          <ExternalLink className="mr-2 h-4 w-4" />
+          Monte Site
+        </Button>
         <Button 
           onClick={() => navigate('/egestor')}
           variant="outline"
