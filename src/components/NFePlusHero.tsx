@@ -3,7 +3,7 @@ import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const NFePlusHero = () => {
   const handleContact = () => {
-    window.open('https://wa.me/5555981311402', '_blank');
+    window.open('https://wa.me/5555991806026', '_blank');
   };
   return <section className="min-h-screen bg-gradient-hero flex items-center justify-center px-4 relative overflow-hidden">
       {/* Background effects */}

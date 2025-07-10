@@ -7,8 +7,8 @@ const contactMethods = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    value: "(55) 99876-5432",
-    action: () => window.open('https://wa.me/5555998765432', '_blank'),
+    value: "(55) 99180-6026",
+    action: () => window.open('https://wa.me/5555991806026', '_blank'),
     primary: true
   },
   {
@@ -21,8 +21,8 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Telefone",
-    value: "(55) 99876-5432",
-    action: () => window.open('tel:+5555998765432', '_blank'),
+    value: "(55) 99180-6026",
+    action: () => window.open('tel:+5555991806026', '_blank'),
     primary: false
   },
   {
@@ -97,7 +97,7 @@ const Contact = () => {
           
           <div className="flex flex-wrap gap-4 justify-center">
             <Button 
-              onClick={() => window.open('https://wa.me/5555998765432?text=Olá Daniel! Vi seu portfólio e gostaria de conversar sobre marketing digital para meu e-commerce.', '_blank')}
+              onClick={() => window.open('https://wa.me/5555991806026?text=Olá Daniel! Vi seu portfólio e gostaria de conversar sobre marketing digital para meu e-commerce.', '_blank')}
               size="lg"
               className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-4 animate-glow-pulse"
             >

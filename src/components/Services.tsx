@@ -32,7 +32,7 @@ const services = [
 
 const Services = () => {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5555998765432?text=Olá Daniel! Gostaria de saber mais sobre os serviços de marketing digital.', '_blank');
+    window.open('https://wa.me/5555991806026?text=Olá Daniel! Gostaria de saber mais sobre os serviços de marketing digital.', '_blank');
   };
 
   return (

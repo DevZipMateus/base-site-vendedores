@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const CTASection = () => {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5555998765432', '_blank');
+    window.open('https://wa.me/5555991806026', '_blank');
   };
 
   const handleEmail = () => {
@@ -13,7 +13,7 @@ const CTASection = () => {
   };
 
   const handlePhone = () => {
-    window.open('tel:+5555998765432', '_blank');
+    window.open('tel:+5555991806026', '_blank');
   };
 
   return (

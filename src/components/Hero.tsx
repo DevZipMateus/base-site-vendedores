@@ -1,8 +1,9 @@
+
 import { MessageCircle, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const Hero = () => {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5555998765432', '_blank');
+    window.open('https://wa.me/5555991806026', '_blank');
   };
   const handleEmail = () => {
     window.open('mailto:daniel.escobar@zipline.com.br', '_blank');
