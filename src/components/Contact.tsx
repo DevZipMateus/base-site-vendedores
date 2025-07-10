@@ -36,7 +36,7 @@ const contactMethods = [
 
 const Contact = () => {
   const handleInstagram = () => {
-    window.open('https://instagram.com/daniel.escobar.marketing', '_blank');
+    window.open('https://www.instagram.com/danielescobar_closer/?locale=pl&hl=am-et', '_blank');
   };
 
   return (
