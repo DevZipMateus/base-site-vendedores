@@ -1,3 +1,4 @@
+
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import Qualifications from "@/components/Qualifications";
@@ -10,9 +11,12 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+
 const Index = () => {
   const navigate = useNavigate();
-  return <div className="min-h-screen bg-background">
+  
+  return (
+    <div className="min-h-screen bg-background">
       {/* Navigation to other pages */}
       <div className="fixed top-4 right-4 z-50 flex gap-2">
         
@@ -29,6 +33,8 @@ const Index = () => {
       <NFePlusSection />
       <Contact />
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
