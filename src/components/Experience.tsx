@@ -1,32 +1,60 @@
-import { Briefcase, Calendar } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-const experiences = [{
-  role: "Consultor de Marketing Digital",
-  company: "Zipline",
-  period: "2023 - Atual",
-  description: "Desenvolvimento de estratégias de marketing digital para e-commerce, gestão de campanhas e otimização de conversões"
-}, {
-  role: "Especialista em E-commerce",
-  company: "Agência Digital Premium",
-  period: "2021 - 2023",
-  description: "Criação e gestão de lojas virtuais, implementação de estratégias de vendas online e análise de performance"
-}, {
-  role: "Analista de Marketing Digital",
-  company: "TechSolutions",
-  period: "2019 - 2021",
-  description: "Gestão de redes sociais, criação de conteúdo digital e campanhas de marketing para diversos segmentos"
-}, {
-  role: "Assistente de Marketing",
-  company: "StartUp Inovadora",
-  period: "2018 - 2019",
-  description: "Suporte em campanhas digitais, análise de métricas e desenvolvimento de estratégias de crescimento"
-}, {
-  role: "Estagiário de Marketing",
-  company: "Empresa Regional",
-  period: "2017 - 2018",
-  description: "Primeira experiência profissional, aprendizado em marketing tradicional e digital"
-}];
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
 const Experience = () => {
-  return;
+  const experiences = [
+    {
+      title: "Desenvolvedor Full Stack",
+      company: "Freelancer",
+      period: "2020 - Presente",
+      description: "Desenvolvimento de aplicações web completas usando React, Node.js e outras tecnologias modernas.",
+      technologies: ["React", "Node.js", "TypeScript", "PostgreSQL"]
+    },
+    {
+      title: "Consultor em Tecnologia",
+      company: "Autônomo",
+      period: "2019 - Presente",
+      description: "Consultoria em soluções tecnológicas para pequenas e médias empresas.",
+      technologies: ["Análise de Sistemas", "Automação", "Integração"]
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-muted/50" id="experience">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experiência Profissional</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Conheça minha trajetória profissional e os projetos que desenvolvi ao longo dos anos.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {experiences.map((exp, index) => (
+            <Card key={index} className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-xl">{exp.title}</CardTitle>
+                <CardDescription className="text-primary font-medium">
+                  {exp.company} • {exp.period}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">{exp.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {exp.technologies.map((tech, techIndex) => (
+                    <Badge key={techIndex} variant="secondary">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default Experience;
