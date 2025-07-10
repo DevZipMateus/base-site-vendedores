@@ -1,0 +1,77 @@
+
+/* Tema específico para a página do Egestor */
+.egestor-theme {
+  /* Cores do sistema Egestor: vermelho #e8262b e preto */
+  --primary: 0 75% 47%; /* #e8262b convertido para HSL */
+  --primary-foreground: 0 0% 100%; /* branco para contraste */
+  
+  --accent: 0 75% 47%; /* mesmo vermelho para accent */
+  --accent-foreground: 0 0% 100%;
+  
+  --blue-primary: 0 75% 47%; /* substituindo azul por vermelho */
+  --blue-secondary: 0 75% 52%; /* vermelho um pouco mais claro */
+  --blue-dark: 0 75% 35%; /* vermelho mais escuro */
+  
+  --gradient-primary: linear-gradient(135deg, hsl(0 75% 47%), hsl(0 75% 52%));
+  --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 75% 95%));
+  --shadow-glow: 0 0 30px hsl(0 75% 47% / 0.3);
+  
+  --foreground: 0 0% 10%; /* preto para texto principal */
+  --card-foreground: 0 0% 10%;
+  --popover-foreground: 0 0% 10%;
+  
+  /* Bordas e elementos secundários em tons de cinza escuro */
+  --border: 0 0% 20%;
+  --input: 0 0% 15%;
+  
+  /* Cards com fundo levemente acinzentado */
+  --card: 0 0% 98%;
+  --popover: 0 0% 100%;
+  
+  /* Elementos mutados em cinza */
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 40%;
+  
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 90%;
+}
+
+/* Aplicar tema apenas quando a classe egestor-theme estiver presente */
+.egestor-theme .animate-glow-pulse {
+  animation: egestor-glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes egestor-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(0 75% 47% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(0 75% 47% / 0.6);
+  }
+}
+
+/* Elementos com gradient específico do Egestor */
+.egestor-theme .bg-gradient-primary {
+  background: linear-gradient(135deg, hsl(0 75% 47%), hsl(0 75% 52%));
+}
+
+/* Elementos com cores de destaque específicas do Egestor */
+.egestor-theme .text-accent {
+  color: hsl(0 75% 47%);
+}
+
+.egestor-theme .border-purple-glow\/20 {
+  border-color: hsl(0 75% 47% / 0.2);
+}
+
+.egestor-theme .border-purple-glow\/30 {
+  border-color: hsl(0 75% 47% / 0.3);
+}
+
+.egestor-theme .hover\:bg-purple-glow\/10:hover {
+  background-color: hsl(0 75% 47% / 0.1);
+}
+
+.egestor-theme .shadow-glow {
+  box-shadow: 0 0 30px hsl(0 75% 47% / 0.3);
+}

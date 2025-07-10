@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import "../styles/egestor-theme.css";
 
 const Egestor = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Egestor = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-gradient-hero egestor-theme">
       {/* Navigation Back */}
       <div className="fixed top-4 left-4 z-50">
         <Button 
