@@ -39,7 +39,7 @@ const Services = () => {
             Serviços Oferecidos
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Soluções completas de marketing digital para e-commerce com a expertise de quem já transformou diversos negócios
+           Posicionamento digital Site profissionais e intuitivos Soluções para sua gestão
           </p>
         </div>
         
