@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import Qualifications from "@/components/Qualifications";
 import Services from "@/components/Services";
+import MonteSiteSection from "@/components/MonteSiteSection";
 import EgestorERP from "@/components/EgestorERP";
 import NFePlusSection from "@/components/NFePlusSection";
 import Contact from "@/components/Contact";
@@ -47,6 +48,7 @@ const Index = () => {
       <Experience />
       <Qualifications />
       <Services />
+      <MonteSiteSection />
       <EgestorERP />
       <NFePlusSection />
       <Contact />
