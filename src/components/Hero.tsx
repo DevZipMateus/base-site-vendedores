@@ -62,7 +62,7 @@ const Hero = () => {
           <div className="relative h-full flex items-end">
             <img 
               alt="Daniel Escobar" 
-              className="h-[95vh] w-auto max-w-full object-cover object-bottom" 
+              className="h-[100vh] w-auto max-w-full object-cover object-bottom" 
               src="/lovable-uploads/c8a5b401-2e69-42e6-a5e0-e64816bbeb21.png" 
             />
           </div>
