@@ -24,7 +24,7 @@ const Hero = () => {
               Consultor de Marketing Digital
             </p>
             <p className="text-lg text-muted-foreground">
-              Especialista em E-commerce • Santa Maria
+              Especialista em SaaS • Santa Maria
             </p>
           </div>
           
