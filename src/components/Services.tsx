@@ -1,42 +1,43 @@
-import { Globe, Smartphone, Palette, Rocket } from "lucide-react";
+
+import { ShoppingCart, TrendingUp, Users, Megaphone } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    icon: Globe,
-    title: "Sites Institucionais",
-    description: "Websites profissionais para empresas que querem marcar presença na internet",
-    features: ["Design responsivo", "SEO otimizado", "Carregamento rápido"]
+    icon: ShoppingCart,
+    title: "Criação de E-commerce",
+    description: "Desenvolvimento completo de lojas virtuais otimizadas para conversão",
+    features: ["Design responsivo", "Integração de pagamentos", "SEO otimizado"]
   },
   {
-    icon: Smartphone,
-    title: "Landing Pages",
-    description: "Páginas de conversão focadas em gerar leads e aumentar suas vendas",
-    features: ["Alta conversão", "Integração WhatsApp", "Analytics"]
+    icon: TrendingUp,
+    title: "Otimização de Conversões",
+    description: "Análise e melhoria da performance de vendas do seu e-commerce",
+    features: ["A/B Testing", "Analytics avançado", "UX/UI optimization"]
   },
   {
-    icon: Palette,
-    title: "Design Personalizado",
-    description: "Criação de identidade visual única para seu negócio se destacar",
-    features: ["Logo profissional", "Paleta de cores", "Tipografia"]
+    icon: Users,
+    title: "Estratégia de Marketing",
+    description: "Planejamento estratégico para aumentar vendas e engajamento",
+    features: ["Redes sociais", "Email marketing", "Campanhas pagas"]
   },
   {
-    icon: Rocket,
-    title: "Sites E-commerce",
-    description: "Lojas virtuais completas para vender seus produtos online",
-    features: ["Pagamento seguro", "Gestão de estoque", "Painel admin"]
+    icon: Megaphone,
+    title: "Consultoria Digital",
+    description: "Orientação especializada para transformação digital do seu negócio",
+    features: ["Análise de mercado", "Plano de ação", "Acompanhamento"]
   }
 ];
 
 const Services = () => {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5555981311402?text=Olá! Gostaria de saber mais sobre os serviços de web design.', '_blank');
+    window.open('https://wa.me/5555998765432?text=Olá Daniel! Gostaria de saber mais sobre os serviços de marketing digital.', '_blank');
   };
 
   return (
     <section className="py-20 px-4 bg-gradient-to-b from-background to-secondary/30 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(270_85%_15%),transparent_50%)] opacity-40" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(220_100%_90%),transparent_50%)] opacity-40" />
       
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
@@ -44,7 +45,7 @@ const Services = () => {
             Serviços Oferecidos
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Sites oferecidos pela empresa <span className="text-accent font-semibold">Monte Site</span> com a expertise de quem já passou por diversas áreas
+            Soluções completas de marketing digital para e-commerce com a expertise de quem já transformou diversos negócios
           </p>
         </div>
         
@@ -52,7 +53,7 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="bg-card/60 backdrop-blur-sm border-border/50 hover:border-purple-glow/50 transition-all duration-300 hover:shadow-glow group"
+              className="bg-card/60 backdrop-blur-sm border-border/50 hover:border-blue-primary/50 transition-all duration-300 hover:shadow-glow group"
             >
               <CardHeader>
                 <div className="flex items-center gap-4">

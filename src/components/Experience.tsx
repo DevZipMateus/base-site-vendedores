@@ -1,43 +1,44 @@
+
 import { Briefcase, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const experiences = [
   {
-    role: "Web Designer Junior",
+    role: "Consultor de Marketing Digital",
     company: "Zipline",
-    period: "2025 - Atual",
-    description: "Desenvolvimento de interfaces web modernas e responsivas, criação de landing pages de alta conversão"
+    period: "2023 - Atual",
+    description: "Desenvolvimento de estratégias de marketing digital para e-commerce, gestão de campanhas e otimização de conversões"
   },
   {
-    role: "Programador de Robô de Solda",
-    company: "Indústria Metalúrgica",
-    period: "2024",
-    description: "Programação e operação de robôs industriais para processos de solda automatizada"
+    role: "Especialista em E-commerce",
+    company: "Agência Digital Premium",
+    period: "2021 - 2023",
+    description: "Criação e gestão de lojas virtuais, implementação de estratégias de vendas online e análise de performance"
   },
   {
-    role: "Estagiário de Logística",
-    company: "Empresa de Distribuição",
-    period: "2023",
-    description: "Gestão de estoque, controle de entrada e saída de produtos, otimização de processos"
+    role: "Analista de Marketing Digital",
+    company: "TechSolutions",
+    period: "2019 - 2021",
+    description: "Gestão de redes sociais, criação de conteúdo digital e campanhas de marketing para diversos segmentos"
   },
   {
-    role: "Militar",
-    company: "Forças Armadas",
-    period: "2022",
-    description: "Desenvolvimento de disciplina, trabalho em equipe e liderança em ambiente militar"
+    role: "Assistente de Marketing",
+    company: "StartUp Inovadora",
+    period: "2018 - 2019",
+    description: "Suporte em campanhas digitais, análise de métricas e desenvolvimento de estratégias de crescimento"
   },
   {
-    role: "Motoboy",
-    company: "Serviços de Entrega",
-    period: "2021",
-    description: "Entrega de produtos com agilidade e responsabilidade, conhecimento da cidade"
+    role: "Estagiário de Marketing",
+    company: "Empresa Regional",
+    period: "2017 - 2018",
+    description: "Primeira experiência profissional, aprendizado em marketing tradicional e digital"
   }
 ];
 
 const Experience = () => {
   return (
     <section className="py-20 px-4 bg-secondary/20 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,hsl(270_85%_20%),transparent_60%)] opacity-30" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,hsl(220_100%_90%),transparent_60%)] opacity-30" />
       
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16">
@@ -45,7 +46,7 @@ const Experience = () => {
             Experiência Profissional
           </h2>
           <p className="text-xl text-muted-foreground">
-            Uma trajetória diversificada que me trouxe perspectivas únicas
+            Uma trajetória sólida em marketing digital e e-commerce
           </p>
         </div>
         
@@ -53,7 +54,7 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <Card 
               key={index} 
-              className="bg-card/40 backdrop-blur-sm border-border/50 hover:border-purple-glow/50 transition-all duration-300 hover:shadow-glow group"
+              className="bg-card/40 backdrop-blur-sm border-border/50 hover:border-blue-primary/50 transition-all duration-300 hover:shadow-glow group"
             >
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row md:items-center gap-4">
@@ -74,7 +75,7 @@ const Experience = () => {
                     </p>
                   </div>
                   
-                  <div className="flex items-center gap-2 text-purple-glow">
+                  <div className="flex items-center gap-2 text-blue-primary">
                     <Calendar className="h-4 w-4" />
                     <span className="text-sm font-medium">
                       {exp.period}

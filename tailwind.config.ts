@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,8 +53,9 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				'purple-glow': 'hsl(var(--purple-glow))',
-				'purple-dark': 'hsl(var(--purple-dark))',
+				'blue-primary': 'hsl(var(--blue-primary))',
+				'blue-secondary': 'hsl(var(--blue-secondary))',
+				'blue-dark': 'hsl(var(--blue-dark))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -89,10 +91,10 @@ export default {
 				},
 				'glow-pulse': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px hsl(270 85% 45% / 0.3)'
+						boxShadow: '0 0 20px hsl(220 100% 50% / 0.3)'
 					},
 					'50%': {
-						boxShadow: '0 0 40px hsl(270 85% 45% / 0.6)'
+						boxShadow: '0 0 40px hsl(220 100% 50% / 0.6)'
 					}
 				},
 				'float': {

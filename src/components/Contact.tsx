@@ -1,4 +1,5 @@
-import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+
+import { MessageCircle, Mail, Phone, MapPin, Instagram } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -6,22 +7,22 @@ const contactMethods = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    value: "(55) 98131-1402",
-    action: () => window.open('https://wa.me/5555981311402', '_blank'),
+    value: "(55) 99876-5432",
+    action: () => window.open('https://wa.me/5555998765432', '_blank'),
     primary: true
   },
   {
     icon: Mail,
     title: "Email",
-    value: "davi.moraes@zipline.com.br",
-    action: () => window.open('mailto:davi.moraes@zipline.com.br', '_blank'),
+    value: "daniel.escobar@zipline.com.br",
+    action: () => window.open('mailto:daniel.escobar@zipline.com.br', '_blank'),
     primary: false
   },
   {
     icon: Phone,
     title: "Telefone",
-    value: "(55) 98131-1402",
-    action: () => window.open('tel:+5555981311402', '_blank'),
+    value: "(55) 99876-5432",
+    action: () => window.open('tel:+5555998765432', '_blank'),
     primary: false
   },
   {
@@ -34,9 +35,13 @@ const contactMethods = [
 ];
 
 const Contact = () => {
+  const handleInstagram = () => {
+    window.open('https://instagram.com/daniel.escobar.marketing', '_blank');
+  };
+
   return (
     <section className="py-20 px-4 bg-gradient-to-t from-background to-secondary/30 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(270_85%_25%),transparent_50%)] opacity-40" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(220_100%_90%),transparent_50%)] opacity-40" />
       
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16">
@@ -44,7 +49,7 @@ const Contact = () => {
             Vamos Conversar?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comunicável, esforçado e observador. Pronto para transformar suas ideias em realidade digital.
+            Especialista em marketing digital pronto para transformar seu negócio online em uma máquina de vendas.
           </p>
         </div>
         
@@ -52,8 +57,8 @@ const Contact = () => {
           {contactMethods.map((method, index) => (
             <Card 
               key={index}
-              className={`bg-card/50 backdrop-blur-sm border-border/50 hover:border-purple-glow/50 transition-all duration-300 hover:shadow-glow group cursor-pointer ${
-                method.primary ? 'ring-2 ring-purple-glow/30' : ''
+              className={`bg-card/50 backdrop-blur-sm border-border/50 hover:border-blue-primary/50 transition-all duration-300 hover:shadow-glow group cursor-pointer ${
+                method.primary ? 'ring-2 ring-blue-primary/30' : ''
               }`}
               onClick={method.action}
             >
@@ -71,7 +76,7 @@ const Contact = () => {
                   {method.title}
                 </h3>
                 <p className={`${
-                  method.primary ? 'text-purple-glow font-medium' : 'text-muted-foreground'
+                  method.primary ? 'text-blue-primary font-medium' : 'text-muted-foreground'
                 }`}>
                   {method.value}
                 </p>
@@ -83,21 +88,33 @@ const Contact = () => {
         <div className="text-center space-y-6">
           <div className="space-y-4">
             <h3 className="text-2xl font-semibold text-foreground">
-              Pronto para começar seu projeto?
+              Pronto para acelerar suas vendas online?
             </h3>
             <p className="text-muted-foreground">
-              Clique no botão abaixo e vamos conversar sobre como posso ajudar você
+              Clique no botão abaixo e vamos conversar sobre como posso transformar seu negócio
             </p>
           </div>
           
-          <Button 
-            onClick={() => window.open('https://wa.me/5555981311402?text=Olá Davi! Vi seu portfólio e gostaria de conversar sobre um projeto.', '_blank')}
-            size="lg"
-            className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-4 animate-glow-pulse"
-          >
-            <MessageCircle className="mr-2 h-5 w-5" />
-            Começar Projeto
-          </Button>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button 
+              onClick={() => window.open('https://wa.me/5555998765432?text=Olá Daniel! Vi seu portfólio e gostaria de conversar sobre marketing digital para meu e-commerce.', '_blank')}
+              size="lg"
+              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-4 animate-glow-pulse"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Começar Projeto
+            </Button>
+            
+            <Button 
+              onClick={handleInstagram}
+              variant="outline"
+              size="lg"
+              className="border-blue-primary text-blue-primary hover:bg-blue-primary hover:text-background transition-all duration-300 text-lg px-8 py-4"
+            >
+              <Instagram className="mr-2 h-5 w-5" />
+              Instagram
+            </Button>
+          </div>
         </div>
       </div>
     </section>
