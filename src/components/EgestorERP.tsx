@@ -12,7 +12,7 @@ const EgestorERP = () => {
           <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 animate-fade-in">
             <Link to="/egestor" className="inline-block hover:opacity-90 transition-opacity">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-                Sistema de gestão empresarial
+                Egestor
               </h2>
             </Link>
             <p className="text-lg md:text-xl text-muted-foreground font-normal">
