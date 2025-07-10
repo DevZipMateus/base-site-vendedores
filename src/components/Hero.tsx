@@ -25,7 +25,7 @@ const Hero = () => {
               Closer
             </p>
             <p className="text-lg text-muted-foreground">
-              Closer
+              Closer -
               Atuo em toda região nacional.
             </p>
           </div>
