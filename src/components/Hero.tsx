@@ -30,7 +30,7 @@ const Hero = () => {
           
           <div className="space-y-6">
             <p className="text-lg text-foreground leading-relaxed">
-              Especialista em marketing digital com foco em e-commerce. Ajudo empresas a 
+              Especialista em SaaS com foco em e-commerce. Ajudo empresas a 
               aumentarem suas vendas online através de estratégias personalizadas e 
               soluções tecnológicas inovadoras.
             </p>
