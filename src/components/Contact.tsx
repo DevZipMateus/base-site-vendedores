@@ -49,7 +49,7 @@ const Contact = () => {
             Vamos Conversar?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Especialista em marketing digital pronto para transformar seu negócio online em uma máquina de vendas.
+            Especialista em posicionamento digital pronto para transformar seu negócio online em uma máquina de vendas.
           </p>
         </div>
         
