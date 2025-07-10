@@ -1,8 +1,14 @@
 
 import { Button } from "@/components/ui/button";
-import { Palette, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const MonteSiteCTA = () => {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "5555991806026";
+    const message = encodeURIComponent("Olá! Gostaria de saber mais sobre os serviços do Monte Site.");
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+  };
+
   return (
     <section className="py-24 px-4 bg-gradient-hero">
       <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -15,21 +21,14 @@ const MonteSiteCTA = () => {
           </p>
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex justify-center">
           <Button 
             size="lg"
-            className="bg-gradient-primary hover:shadow-glow transition-all duration-300 w-full sm:w-auto"
-          >
-            <Palette className="mr-2 h-5 w-5" />
-            Escolher Estilo
-          </Button>
-          <Button 
-            size="lg"
-            variant="outline"
-            className="border-primary text-primary hover:bg-primary/10 w-full sm:w-auto"
+            onClick={handleWhatsAppClick}
+            className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
           >
             <MessageCircle className="mr-2 h-5 w-5" />
-            Fale com um Especialista
+            Fale com o Especialista
           </Button>
         </div>
       </div>
