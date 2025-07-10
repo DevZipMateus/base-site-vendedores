@@ -22,7 +22,7 @@ const Hero = () => {
               Daniel Escobar
             </h1>
             <p className="text-xl md:text-2xl text-blue-primary font-medium">
-              Consultor de Marketing Digital
+              Closer
             </p>
             <p className="text-lg text-muted-foreground">
               Especialista em SaaS • Santa Maria
