@@ -1,49 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  CheckCircle, 
-  Rocket, 
-  Brain, 
-  ShoppingCart, 
-  Zap, 
-  Search, 
-  Image, 
-  Package, 
-  CreditCard, 
-  Paperclip, 
-  BarChart3, 
-  Target,
-  Palette,
-  Link,
-  Truck,
-  History,
-  User,
-  FileText,
-  Flame,
-  ArrowLeft,
-  Phone,
-  MessageCircle
-} from "lucide-react";
+import { CheckCircle, Rocket, Brain, ShoppingCart, Zap, Search, Image, Package, CreditCard, Paperclip, BarChart3, Target, Palette, Link, Truck, History, User, FileText, Flame, ArrowLeft, Phone, MessageCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import "../styles/egestor-theme.css";
-
 const Egestor = () => {
   const navigate = useNavigate();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-gradient-hero egestor-theme">
+  return <div className="min-h-screen bg-gradient-hero egestor-theme">
       {/* Navigation Back */}
       <div className="fixed top-4 left-4 z-50">
-        <Button 
-          onClick={() => navigate('/')}
-          variant="outline"
-          className="bg-background/80 backdrop-blur-sm border-purple-glow/30 hover:bg-purple-glow/10"
-        >
+        <Button onClick={() => navigate('/')} variant="outline" className="bg-background/80 backdrop-blur-sm border-purple-glow/30 hover:bg-purple-glow/10">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Voltar
         </Button>
@@ -71,7 +40,7 @@ const Egestor = () => {
         <Card className="mb-12 bg-card/50 backdrop-blur-sm border-purple-glow/20">
           <CardContent className="p-8">
             <div className="flex items-start gap-4">
-              <div className="text-4xl">💡</div>
+              
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-4">
                   Você vende na loja física? Agora é hora de vender online sem complicações.
@@ -94,19 +63,28 @@ const Egestor = () => {
               Destaques Principais
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              {[
-                { icon: CheckCircle, text: "Loja criada por especialistas" },
-                { icon: Zap, text: "Checkout ultrarrápido: compre em até 40 segundos" },
-                { icon: Brain, text: "Inteligência artificial que descreve produtos e recomenda ofertas" },
-                { icon: ShoppingCart, text: "Recuperação automática de carrinhos abandonados" },
-                { icon: Link, text: "Integração com meios de pagamento e logística" },
-                { icon: Phone, text: "Suporte humano por WhatsApp e ligação" }
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 rounded-lg bg-background/30">
+              {[{
+              icon: CheckCircle,
+              text: "Loja criada por especialistas"
+            }, {
+              icon: Zap,
+              text: "Checkout ultrarrápido: compre em até 40 segundos"
+            }, {
+              icon: Brain,
+              text: "Inteligência artificial que descreve produtos e recomenda ofertas"
+            }, {
+              icon: ShoppingCart,
+              text: "Recuperação automática de carrinhos abandonados"
+            }, {
+              icon: Link,
+              text: "Integração com meios de pagamento e logística"
+            }, {
+              icon: Phone,
+              text: "Suporte humano por WhatsApp e ligação"
+            }].map((item, index) => <div key={index} className="flex items-center gap-3 p-4 rounded-lg bg-background/30">
                   <CheckCircle className="h-6 w-6 text-accent flex-shrink-0" />
                   <span className="text-foreground font-medium">{item.text}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </CardContent>
         </Card>
@@ -115,7 +93,7 @@ const Egestor = () => {
         <Card className="mb-12 bg-card/50 backdrop-blur-sm border-purple-glow/20">
           <CardContent className="p-8">
             <div className="text-center mb-8">
-              <div className="text-4xl mb-4">🎯</div>
+              
               <h2 className="text-3xl font-bold text-foreground mb-4">
                 NÓS CUIDAMOS DE TUDO!
               </h2>
@@ -125,17 +103,23 @@ const Egestor = () => {
             </div>
             
             <div className="grid md:grid-cols-3 gap-6 mt-8">
-              {[
-                { icon: "📚", title: "Treinamento completo", desc: "Para usar sua loja com facilidade" },
-                { icon: "👥", title: "Suporte direto", desc: "Com pessoas reais" },
-                { icon: "🔄", title: "Atualizações contínuas", desc: "Melhorias constantes" }
-              ].map((item, index) => (
-                <div key={index} className="text-center p-6 rounded-lg bg-background/30">
-                  <div className="text-4xl mb-3">{item.icon}</div>
+              {[{
+              icon: "📚",
+              title: "Treinamento completo",
+              desc: "Para usar sua loja com facilidade"
+            }, {
+              icon: "👥",
+              title: "Suporte direto",
+              desc: "Com pessoas reais"
+            }, {
+              icon: "🔄",
+              title: "Atualizações contínuas",
+              desc: "Melhorias constantes"
+            }].map((item, index) => <div key={index} className="text-center p-6 rounded-lg bg-background/30">
+                  
                   <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
                   <p className="text-muted-foreground">{item.desc}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </CardContent>
         </Card>
@@ -147,23 +131,40 @@ const Egestor = () => {
               Recursos para Alavancar suas Vendas
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                { icon: Brain, text: "Inteligência Artificial: cria descrições e entende o comportamento do cliente" },
-                { icon: ShoppingCart, text: "Recuperação de Carrinho: aumenta suas vendas automaticamente" },
-                { icon: Zap, text: "Ultracheckout: finalização de compra em 40 segundos" },
-                { icon: Search, text: "Busca Inteligente: mostra o produto certo na hora certa" },
-                { icon: Image, text: "Marca D'água Automática: protege suas fotos" },
-                { icon: Package, text: "Frete na página do produto: melhora a conversão" },
-                { icon: CreditCard, text: "Parcelamento visível no catálogo" },
-                { icon: Paperclip, text: "Anexos e informações completas no produto" },
-                { icon: BarChart3, text: "Controle de estoque inteligente" },
-                { icon: Target, text: "Vitrines de recomendação personalizadas em tempo real" }
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-3 p-4 rounded-lg bg-background/30 hover:bg-background/50 transition-colors">
+              {[{
+              icon: Brain,
+              text: "Inteligência Artificial: cria descrições e entende o comportamento do cliente"
+            }, {
+              icon: ShoppingCart,
+              text: "Recuperação de Carrinho: aumenta suas vendas automaticamente"
+            }, {
+              icon: Zap,
+              text: "Ultracheckout: finalização de compra em 40 segundos"
+            }, {
+              icon: Search,
+              text: "Busca Inteligente: mostra o produto certo na hora certa"
+            }, {
+              icon: Image,
+              text: "Marca D'água Automática: protege suas fotos"
+            }, {
+              icon: Package,
+              text: "Frete na página do produto: melhora a conversão"
+            }, {
+              icon: CreditCard,
+              text: "Parcelamento visível no catálogo"
+            }, {
+              icon: Paperclip,
+              text: "Anexos e informações completas no produto"
+            }, {
+              icon: BarChart3,
+              text: "Controle de estoque inteligente"
+            }, {
+              icon: Target,
+              text: "Vitrines de recomendação personalizadas em tempo real"
+            }].map((item, index) => <div key={index} className="flex items-start gap-3 p-4 rounded-lg bg-background/30 hover:bg-background/50 transition-colors">
                   <item.icon className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                   <span className="text-sm text-foreground">{item.text}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </CardContent>
         </Card>
@@ -175,19 +176,28 @@ const Egestor = () => {
               Vantagens Exclusivas para seu Negócio
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              {[
-                { icon: Palette, text: "Aparência personalizável: você escolhe o visual da sua loja" },
-                { icon: Link, text: "Integração com ferramentas que você já usa" },
-                { icon: Truck, text: "Opções de envio flexíveis: motoboy, retirada ou faixas de CEP" },
-                { icon: History, text: "Histórico de edições com possibilidade de reversão" },
-                { icon: User, text: "Logar como cliente: veja exatamente o que seu cliente vê" },
-                { icon: FileText, text: "Formulários personalizados para contato rápido e direto" }
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 rounded-lg bg-background/30">
+              {[{
+              icon: Palette,
+              text: "Aparência personalizável: você escolhe o visual da sua loja"
+            }, {
+              icon: Link,
+              text: "Integração com ferramentas que você já usa"
+            }, {
+              icon: Truck,
+              text: "Opções de envio flexíveis: motoboy, retirada ou faixas de CEP"
+            }, {
+              icon: History,
+              text: "Histórico de edições com possibilidade de reversão"
+            }, {
+              icon: User,
+              text: "Logar como cliente: veja exatamente o que seu cliente vê"
+            }, {
+              icon: FileText,
+              text: "Formulários personalizados para contato rápido e direto"
+            }].map((item, index) => <div key={index} className="flex items-center gap-3 p-4 rounded-lg bg-background/30">
                   <item.icon className="h-6 w-6 text-accent flex-shrink-0" />
                   <span className="text-foreground">{item.text}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </CardContent>
         </Card>
@@ -208,24 +218,18 @@ const Egestor = () => {
             
             <div className="space-y-4">
               <p className="text-lg text-primary-foreground/80 mb-6">
-                👉 Entre em contato agora e peça sua loja virtual pronta!<br />
+                Entre em contato agora e peça sua loja virtual pronta!<br />
                 Ou clique no botão abaixo e comece hoje mesmo!
               </p>
               
-              <Button 
-                size="lg" 
-                className="bg-background text-primary hover:bg-background/90 text-xl px-8 py-6 rounded-xl shadow-glow animate-glow-pulse"
-                onClick={() => window.open('https://wa.me/5555991806026', '_blank')}
-              >
+              <Button size="lg" className="bg-background text-primary hover:bg-background/90 text-xl px-8 py-6 rounded-xl shadow-glow animate-glow-pulse" onClick={() => window.open('https://wa.me/5555991806026', '_blank')}>
                 <MessageCircle className="mr-3 h-6 w-6" />
-                📲 QUERO MINHA LOJA VIRTUAL
+                Quero saber mais
               </Button>
             </div>
           </CardContent>
         </Card>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Egestor;
