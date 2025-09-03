@@ -256,7 +256,8 @@ const CanvasHero = () => {
                 <img 
                   src="/lovable-uploads/37a1badb-1091-4172-99d4-65383d0ed586.png" 
                   alt="eGestor" 
-                  className="inline-block h-12 sm:h-14 md:h-16 lg:h-20"
+                  className="inline-block h-12 sm:h-14 md:h-16 lg:h-24 xl:h-28 drop-shadow-lg"
+                  style={{ filter: 'brightness(1.1)' }}
                 />
               </button>
             </div>
