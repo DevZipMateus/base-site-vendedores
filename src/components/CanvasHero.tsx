@@ -194,7 +194,7 @@ const CanvasHero = () => {
       <div className="absolute top-16 left-1/2 transform -translate-x-1/2" style={{ zIndex: 2 }}>
         <div className="space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 flex items-center justify-center flex-wrap gap-4">
-            Bem-vindos ao Show com Parceria
+            Bem-vindos ao Show com
             <img 
               src="/lovable-uploads/37a1badb-1091-4172-99d4-65383d0ed586.png" 
               alt="eGestor" 
