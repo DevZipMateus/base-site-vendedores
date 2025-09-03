@@ -1,5 +1,5 @@
 
-import Hero from "@/components/Hero";
+import CanvasHero from "@/components/CanvasHero";
 import Experience from "@/components/Experience";
 import Qualifications from "@/components/Qualifications";
 import Services from "@/components/Services";
@@ -24,7 +24,7 @@ const Index = () => {
         
       </div>
       
-      <Hero />
+      <CanvasHero />
       <Experience />
       <Qualifications />
       <Services />
