@@ -195,19 +195,26 @@ const CanvasHero = () => {
         <div className="space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 flex items-center justify-center flex-wrap gap-4">
             Bem-vindos ao Show com Parceria
-            <a 
-              href="https://egestor.com.br/cadastro.php" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block hover:opacity-80 transition-opacity"
-            >
-              <img 
-                src="/lovable-uploads/37a1badb-1091-4172-99d4-65383d0ed586.png" 
-                alt="eGestor" 
-                className="inline-block h-16 md:h-20 cursor-pointer"
-              />
-            </a>
+            <img 
+              src="/lovable-uploads/37a1badb-1091-4172-99d4-65383d0ed586.png" 
+              alt="eGestor" 
+              className="inline-block h-16 md:h-20"
+            />
           </h1>
+          
+          {/* Invisible button overlay on eGestor logo */}
+          <button
+            onClick={() => window.open('https://egestor.com.br/cadastro.php', '_blank')}
+            className="absolute bg-transparent border-none cursor-pointer"
+            style={{
+              top: '0px',
+              right: '0px',
+              width: '64px', // h-16 = 64px
+              height: '64px',
+              zIndex: 10
+            }}
+            aria-label="Acessar eGestor"
+          />
         </div>
       </div>
     </section>
