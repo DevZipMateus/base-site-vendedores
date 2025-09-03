@@ -185,7 +185,7 @@ const CanvasHero = () => {
       
       {/* Hero Image positioned at bottom */}
       <img 
-        src="/lovable-uploads/dcbea98b-fbcb-42cb-8e8b-0d64f6137284.png" 
+        src="/lovable-uploads/5f4fa3bb-d6f6-45b7-8e33-1e446a875ad9.png" 
         alt="Hero Image" 
         className="absolute bottom-0 left-1/2 transform -translate-x-1/2 max-w-full h-auto"
         style={{ zIndex: 3, transform: 'translateX(-50%) scale(2)' }}
