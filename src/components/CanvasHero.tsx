@@ -243,21 +243,23 @@ const CanvasHero = () => {
         style={{ zIndex: 3, transform: 'translateX(-50%) scale(2)' }}
       />
       
-      <div className="absolute top-16 left-1/2 transform -translate-x-1/2" style={{ zIndex: 2 }}>
+      <div className="absolute top-16 left-1/2 transform -translate-x-1/2 px-4" style={{ zIndex: 2 }}>
         <div className="space-y-6">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 flex items-center justify-center flex-wrap gap-4">
-            Bem-vindos ao Show com
-            <button
-              onClick={() => window.open('https://egestor.com.br/cadastro.php', '_blank')}
-              className="bg-transparent border-none cursor-pointer p-0 m-0 inline-block"
-              aria-label="Acessar eGestor"
-            >
-              <img 
-                src="/lovable-uploads/37a1badb-1091-4172-99d4-65383d0ed586.png" 
-                alt="eGestor" 
-                className="inline-block h-16 md:h-20"
-              />
-            </button>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+              <span className="whitespace-nowrap">Bem-vindos ao Show com</span>
+              <button
+                onClick={() => window.open('https://egestor.com.br/cadastro.php', '_blank')}
+                className="bg-transparent border-none cursor-pointer p-0 m-0"
+                aria-label="Acessar eGestor"
+              >
+                <img 
+                  src="/lovable-uploads/37a1badb-1091-4172-99d4-65383d0ed586.png" 
+                  alt="eGestor" 
+                  className="inline-block h-12 sm:h-14 md:h-16 lg:h-20"
+                />
+              </button>
+            </div>
           </h1>
         </div>
       </div>
