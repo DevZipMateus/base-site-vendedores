@@ -54,31 +54,46 @@ const CanvasHero = () => {
       }
     }
 
-    // Classe para os lasers
+    // Classe para os lasers (atualizada para ter ângulo e fade out)
     class Laser {
-      x: number;
-      y: number;
+      startX: number;
+      startY: number;
       color: string;
       width: number;
-      endX: number;
-      endY: number;
+      angle: number;
+      length: number;
+      opacity: number;
+      fadeSpeed: number;
 
-      constructor(x: number, y: number, color: string) {
-        this.x = x;
-        this.y = y;
+      constructor(startX: number, startY: number, color: string, angle: number, length: number) {
+        this.startX = startX;
+        this.startY = startY;
         this.color = color;
-        this.width = 2;
-        this.endX = Math.random() * canvas.width;
-        this.endY = Math.random() * canvas.height;
+        this.width = 2.5; // Um pouco mais grosso para melhor visualização
+        this.angle = angle;
+        this.length = length;
+        this.opacity = 1;
+        this.fadeSpeed = 0.01; // VELOCIDADE REDUZIDA (valor menor = mais lento)
+      }
+
+      update() {
+        this.opacity -= this.fadeSpeed;
+        if (this.opacity < 0) {
+          this.opacity = 0;
+        }
       }
 
       draw() {
-        ctx.strokeStyle = this.color;
-        ctx.lineWidth = this.width;
-        ctx.beginPath();
-        ctx.moveTo(this.x, this.y);
-        ctx.lineTo(this.endX, this.endY);
-        ctx.stroke();
+        if (this.opacity > 0) {
+          ctx.strokeStyle = `rgba(${this.color}, ${this.opacity})`;
+          ctx.lineWidth = this.width;
+          ctx.beginPath();
+          ctx.moveTo(this.startX, this.startY);
+          const endX = this.startX + Math.cos(this.angle) * this.length;
+          const endY = this.startY + Math.sin(this.angle) * this.length;
+          ctx.lineTo(endX, endY);
+          ctx.stroke();
+        }
       }
     }
 
@@ -101,19 +116,32 @@ const CanvasHero = () => {
     }
 
     function handleLasers() {
-      // Limpa os lasers antigos
-      lasers = [];
-
-      // Cria novos lasers em intervalos aleatórios
-      if (Math.random() < 0.1) {
-        lasers.push(new Laser(0, 0, 'lime')); // Laser verde do canto superior esquerdo
+      // Chance de criar um novo laser
+      if (Math.random() < 0.2) { // MAIS FEIXES (aumentamos a chance de 0.1 para 0.2)
+        const colors = ['0, 255, 0', '128, 0, 128']; // Verde e Roxo
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Sorteia se o laser virá da esquerda ou da direita
+        if (Math.random() < 0.5) {
+          // Canhão da ESQUERDA INFERIOR
+          // Ângulo para cima e para a direita (-90 a 0 graus)
+          const angle = Math.random() * (Math.PI / 2) - (Math.PI / 2); 
+          lasers.push(new Laser(0, canvas.height, randomColor, angle, canvas.height * 1.5));
+        } else {
+          // Canhão da DIREITA INFERIOR
+          // Ângulo para cima e para a esquerda (-180 a -90 graus)
+          const angle = Math.random() * (-Math.PI / 2) - (Math.PI / 2);
+          lasers.push(new Laser(canvas.width, canvas.height, randomColor, angle, canvas.height * 1.5));
+        }
       }
-      if (Math.random() < 0.1) {
-        lasers.push(new Laser(canvas.width, 0, 'purple')); // Laser roxo do canto superior direito
-      }
 
-      for (let i = 0; i < lasers.length; i++) {
+      // Atualiza, desenha e remove os lasers que já desapareceram
+      for (let i = lasers.length - 1; i >= 0; i--) {
+        lasers[i].update();
         lasers[i].draw();
+        if (lasers[i].opacity <= 0) {
+          lasers.splice(i, 1);
+        }
       }
     }
 
