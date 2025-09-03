@@ -183,6 +183,14 @@ const CanvasHero = () => {
         style={{ zIndex: 1 }}
       />
       
+      {/* Hero Image positioned at bottom */}
+      <img 
+        src="/lovable-uploads/dcbea98b-fbcb-42cb-8e8b-0d64f6137284.png" 
+        alt="Hero Image" 
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 max-w-full h-auto"
+        style={{ zIndex: 3 }}
+      />
+      
       <div className="relative" style={{ zIndex: 2 }}>
         <div className="space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
