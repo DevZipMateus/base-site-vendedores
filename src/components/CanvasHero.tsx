@@ -188,7 +188,7 @@ const CanvasHero = () => {
         src="/lovable-uploads/dcbea98b-fbcb-42cb-8e8b-0d64f6137284.png" 
         alt="Hero Image" 
         className="absolute bottom-0 left-1/2 transform -translate-x-1/2 max-w-full h-auto"
-        style={{ zIndex: 3 }}
+        style={{ zIndex: 3, transform: 'translateX(-50%) scale(2)' }}
       />
       
       <div className="relative" style={{ zIndex: 2 }}>
