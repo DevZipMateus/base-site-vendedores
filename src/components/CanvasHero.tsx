@@ -1,10 +1,15 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Mail } from "lucide-react";
+import { Slider } from "@/components/ui/slider";
+import { MessageSquare, Mail, Volume2, VolumeX, Play, Pause } from "lucide-react";
 import profileImage from "@/assets/profile-davi.jpg";
 
 const CanvasHero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [volume, setVolume] = useState(0.5);
+  const [showControls, setShowControls] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -172,6 +177,53 @@ const CanvasHero = () => {
     window.open('mailto:contato@exemplo.com?subject=Contato via Site', '_blank');
   };
 
+  // Audio control functions
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.volume = volume;
+
+    // Try to autoplay when component mounts
+    const tryAutoplay = async () => {
+      try {
+        await audio.play();
+        setIsPlaying(true);
+      } catch (error) {
+        // Autoplay blocked, user will need to click play
+        console.log('Autoplay blocked, waiting for user interaction');
+        setIsPlaying(false);
+      }
+    };
+
+    tryAutoplay();
+  }, []);
+
+  const togglePlay = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    try {
+      if (isPlaying) {
+        audio.pause();
+        setIsPlaying(false);
+      } else {
+        await audio.play();
+        setIsPlaying(true);
+      }
+    } catch (error) {
+      console.log('Failed to play audio:', error);
+    }
+  };
+
+  const handleVolumeChange = (newVolume: number[]) => {
+    const volumeValue = newVolume[0];
+    setVolume(volumeValue);
+    if (audioRef.current) {
+      audioRef.current.volume = volumeValue;
+    }
+  };
+
   return (
     <section 
       className="relative w-screen h-screen flex justify-center items-center text-center overflow-hidden"
@@ -207,6 +259,60 @@ const CanvasHero = () => {
               />
             </button>
           </h1>
+        </div>
+      </div>
+
+      {/* Background Audio */}
+      <audio
+        ref={audioRef}
+        loop
+        preload="auto"
+        className="hidden"
+      >
+        <source src="/lovable-uploads/audio/leilao.mp3" type="audio/mpeg" />
+        Seu navegador não suporta o elemento audio.
+      </audio>
+
+      {/* Music Controls */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <div className="flex flex-col items-end gap-2">
+          {/* Volume Control */}
+          {showControls && (
+            <div className="bg-black/80 backdrop-blur-sm rounded-lg p-3 border border-white/20 animate-fade-in">
+              <div className="flex items-center gap-2">
+                <VolumeX size={16} className="text-white/70" />
+                <Slider
+                  value={[volume]}
+                  onValueChange={handleVolumeChange}
+                  max={1}
+                  step={0.1}
+                  className="w-24"
+                />
+                <Volume2 size={16} className="text-white/70" />
+              </div>
+            </div>
+          )}
+          
+          {/* Main Music Button */}
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setShowControls(!showControls)}
+              className="bg-black/80 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+            >
+              <Volume2 size={20} />
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={togglePlay}
+              className="bg-black/80 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+            >
+              {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+            </Button>
+          </div>
         </div>
       </div>
     </section>
