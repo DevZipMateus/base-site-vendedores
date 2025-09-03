@@ -118,7 +118,9 @@ const CanvasHero = () => {
     function handleLasers() {
       // Chance de criar um novo laser
       if (Math.random() < 0.2) { // MAIS FEIXES (aumentamos a chance de 0.1 para 0.2)
-        const colors = ['0, 255, 0', '128, 0, 128']; // Verde e Roxo
+        // --- MUDANÇA DE COR AQUI ---
+        const colors = ['0, 0, 205', '0, 191, 255', '255, 255, 255']; // Azul Escuro, Azul Claro e Branco
+        
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         
         // Sorteia se o laser virá da esquerda ou da direita
