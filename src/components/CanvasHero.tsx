@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
-import { MessageSquare, Mail, Volume2, VolumeX, Play, Pause } from "lucide-react";
+import { MessageSquare, Mail, Volume2, VolumeX } from "lucide-react";
 import profileImage from "@/assets/profile-davi.jpg";
 
 const CanvasHero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [showControls, setShowControls] = useState(false);
 
@@ -184,37 +183,31 @@ const CanvasHero = () => {
 
     audio.volume = volume;
 
-    // Try to autoplay when component mounts
+    // Always try to autoplay when component mounts
     const tryAutoplay = async () => {
       try {
         await audio.play();
-        setIsPlaying(true);
       } catch (error) {
-        // Autoplay blocked, user will need to click play
+        // Autoplay blocked, try again on first user interaction
         console.log('Autoplay blocked, waiting for user interaction');
-        setIsPlaying(false);
+        
+        const handleUserInteraction = async () => {
+          try {
+            await audio.play();
+            document.removeEventListener('click', handleUserInteraction);
+            document.removeEventListener('touchstart', handleUserInteraction);
+          } catch (e) {
+            console.log('Failed to play audio after user interaction:', e);
+          }
+        };
+
+        document.addEventListener('click', handleUserInteraction);
+        document.addEventListener('touchstart', handleUserInteraction);
       }
     };
 
     tryAutoplay();
   }, []);
-
-  const togglePlay = async () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    try {
-      if (isPlaying) {
-        audio.pause();
-        setIsPlaying(false);
-      } else {
-        await audio.play();
-        setIsPlaying(true);
-      }
-    } catch (error) {
-      console.log('Failed to play audio:', error);
-    }
-  };
 
   const handleVolumeChange = (newVolume: number[]) => {
     const volumeValue = newVolume[0];
@@ -223,6 +216,13 @@ const CanvasHero = () => {
       audioRef.current.volume = volumeValue;
     }
   };
+
+  // Update audio volume when volume state changes
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+    }
+  }, [volume]);
 
   return (
     <section 
@@ -294,25 +294,14 @@ const CanvasHero = () => {
           )}
           
           {/* Main Music Button */}
-          <div className="flex gap-2">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setShowControls(!showControls)}
-              className="bg-black/80 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
-            >
-              <Volume2 size={20} />
-            </Button>
-            
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={togglePlay}
-              className="bg-black/80 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
-            >
-              {isPlaying ? <Pause size={20} /> : <Play size={20} />}
-            </Button>
-          </div>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setShowControls(!showControls)}
+            className="bg-black/80 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+          >
+            <Volume2 size={20} />
+          </Button>
         </div>
       </div>
     </section>
