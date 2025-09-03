@@ -195,11 +195,18 @@ const CanvasHero = () => {
         <div className="space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 flex items-center justify-center flex-wrap gap-4">
             Bem-vindos ao Show com Parceria
-            <img 
-              src="/lovable-uploads/37a1badb-1091-4172-99d4-65383d0ed586.png" 
-              alt="eGestor" 
-              className="inline-block h-16 md:h-20"
-            />
+            <a 
+              href="https://egestor.com.br/cadastro.php" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block hover:opacity-80 transition-opacity"
+            >
+              <img 
+                src="/lovable-uploads/37a1badb-1091-4172-99d4-65383d0ed586.png" 
+                alt="eGestor" 
+                className="inline-block h-16 md:h-20 cursor-pointer"
+              />
+            </a>
           </h1>
         </div>
       </div>
