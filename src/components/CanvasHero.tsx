@@ -191,7 +191,7 @@ const CanvasHero = () => {
         style={{ zIndex: 3, transform: 'translateX(-50%) scale(2)' }}
       />
       
-      <div className="relative" style={{ zIndex: 2 }}>
+      <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ zIndex: 2 }}>
         <div className="space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
             Bem-vindos ao Show com Parceria eGestor
