@@ -160,54 +160,43 @@ const CanvasHero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section 
+      className="relative w-screen h-screen flex justify-center items-center text-center overflow-hidden"
+      style={{ backgroundColor: '#000', color: '#fff' }}
+    >
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
+        className="absolute top-0 left-0 w-full h-full"
         style={{ zIndex: 1 }}
       />
       
-      <div className="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-        <div className="text-white space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Bem-vindo ao
-            <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Show Digital
-            </span>
+      <div className="relative" style={{ zIndex: 2 }}>
+        <div className="space-y-6">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4">
+            Bem-vindo ao Show
           </h1>
           
-          <p className="text-xl text-gray-300 max-w-lg">
-            Uma experiência incrível em desenvolvimento web e soluções digitais espera por você.
+          <p className="text-xl md:text-2xl mb-8 text-gray-300">
+            Uma experiência incrível espera por você.
           </p>
           
-          <div className="flex gap-4">
+          <div className="flex gap-4 justify-center">
             <Button 
               onClick={handleWhatsApp}
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg"
             >
-              <MessageSquare className="w-5 h-5 mr-2" />
+              <MessageSquare className="w-6 h-6 mr-2" />
               WhatsApp
             </Button>
             
             <Button 
               onClick={handleEmail}
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-black px-6 py-3"
+              className="border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg"
             >
-              <Mail className="w-5 h-5 mr-2" />
+              <Mail className="w-6 h-6 mr-2" />
               Email
             </Button>
-          </div>
-        </div>
-        
-        <div className="flex justify-center">
-          <div className="relative">
-            <img 
-              src={profileImage} 
-              alt="Perfil Profissional" 
-              className="w-80 h-80 object-cover rounded-full border-4 border-blue-400 shadow-2xl shadow-blue-400/50"
-            />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-400/20 to-cyan-400/20"></div>
           </div>
         </div>
       </div>
