@@ -194,7 +194,7 @@ const CanvasHero = () => {
       <div className="relative" style={{ zIndex: 2 }}>
         <div className="space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            Bem-vindo ao Show
+            Bem-vindos ao Show com Parceria eGestor
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-gray-300">
