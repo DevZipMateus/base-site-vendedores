@@ -196,29 +196,6 @@ const CanvasHero = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
             Bem-vindos ao Show com Parceria eGestor
           </h1>
-          
-          <p className="text-xl md:text-2xl mb-8 text-gray-300">
-            Uma experiência incrível espera por você.
-          </p>
-          
-          <div className="flex gap-4 justify-center">
-            <Button 
-              onClick={handleWhatsApp}
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg"
-            >
-              <MessageSquare className="w-6 h-6 mr-2" />
-              WhatsApp
-            </Button>
-            
-            <Button 
-              onClick={handleEmail}
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg"
-            >
-              <Mail className="w-6 h-6 mr-2" />
-              Email
-            </Button>
-          </div>
         </div>
       </div>
     </section>
