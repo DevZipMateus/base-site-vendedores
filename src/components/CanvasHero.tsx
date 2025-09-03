@@ -246,8 +246,8 @@ const CanvasHero = () => {
       <div className="absolute top-16 left-1/2 transform -translate-x-1/2 px-4" style={{ zIndex: 2 }}>
         <div className="space-y-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 text-center">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-              <span className="whitespace-nowrap">Bem-vindos ao Show com</span>
+            <div className="flex flex-col items-center justify-center gap-1">
+              <span className="text-center">Bem-vindos ao Show com</span>
               <button
                 onClick={() => window.open('https://egestor.com.br/cadastro.php', '_blank')}
                 className="bg-transparent border-none cursor-pointer p-0 m-0"
