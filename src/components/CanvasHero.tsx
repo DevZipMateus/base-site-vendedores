@@ -22,126 +22,109 @@ const CanvasHero = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Particle system for smoke effect
+    // Classe para as partículas de fumaça
     class Particle {
       x: number;
       y: number;
-      vx: number;
-      vy: number;
-      life: number;
-      maxLife: number;
       size: number;
+      speedX: number;
+      speedY: number;
+      color: string;
 
       constructor(x: number, y: number) {
         this.x = x;
         this.y = y;
-        this.vx = (Math.random() - 0.5) * 2;
-        this.vy = -Math.random() * 3 - 1;
-        this.life = 1;
-        this.maxLife = Math.random() * 60 + 40;
-        this.size = Math.random() * 4 + 2;
+        this.size = Math.random() * 5 + 1;
+        this.speedX = Math.random() * 3 - 1.5;
+        this.speedY = Math.random() * 3 - 1.5;
+        this.color = 'rgba(255, 255, 255, 0.05)';
       }
 
       update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        this.life -= 1 / this.maxLife;
-        this.vy *= 0.99; // Slow down over time
-        this.vx *= 0.99;
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.2) this.size -= 0.1;
       }
 
-      draw(ctx: CanvasRenderingContext2D) {
-        const alpha = this.life * 0.3;
-        ctx.save();
-        ctx.globalAlpha = alpha;
-        ctx.fillStyle = `hsl(220, 100%, ${50 + Math.random() * 20}%)`;
+      draw() {
+        ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
-        ctx.restore();
       }
     }
 
-    // Laser beam effect
+    // Classe para os lasers
     class Laser {
       x: number;
       y: number;
-      angle: number;
-      length: number;
-      intensity: number;
+      color: string;
+      width: number;
+      endX: number;
+      endY: number;
 
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.angle = Math.random() * Math.PI * 2;
-        this.length = Math.random() * 200 + 100;
-        this.intensity = Math.random() * 0.5 + 0.3;
+      constructor(x: number, y: number, color: string) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.width = 2;
+        this.endX = Math.random() * canvas.width;
+        this.endY = Math.random() * canvas.height;
       }
 
-      update() {
-        this.angle += 0.01;
-        this.intensity = Math.sin(Date.now() * 0.005) * 0.3 + 0.5;
-      }
-
-      draw(ctx: CanvasRenderingContext2D) {
-        const endX = this.x + Math.cos(this.angle) * this.length;
-        const endY = this.y + Math.sin(this.angle) * this.length;
-
-        ctx.save();
-        ctx.globalAlpha = this.intensity;
-        ctx.strokeStyle = 'hsl(220, 100%, 60%)';
-        ctx.lineWidth = 2;
-        ctx.shadowBlur = 20;
-        ctx.shadowColor = 'hsl(220, 100%, 60%)';
+      draw() {
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = this.width;
         ctx.beginPath();
         ctx.moveTo(this.x, this.y);
-        ctx.lineTo(endX, endY);
+        ctx.lineTo(this.endX, this.endY);
         ctx.stroke();
-        ctx.restore();
       }
     }
 
-    const particles: Particle[] = [];
-    const lasers: Laser[] = [];
+    let particles: Particle[] = [];
+    let lasers: Laser[] = [];
 
-    // Initialize lasers
-    for (let i = 0; i < 5; i++) {
-      lasers.push(new Laser());
+    function handleParticles() {
+      for (let i = 0; i < 5; i++) {
+        particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
+      }
+
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        if (particles[i].size <= 0.3) {
+          particles.splice(i, 1);
+          i--;
+        }
+      }
+    }
+
+    function handleLasers() {
+      // Limpa os lasers antigos
+      lasers = [];
+
+      // Cria novos lasers em intervalos aleatórios
+      if (Math.random() < 0.1) {
+        lasers.push(new Laser(0, 0, 'lime')); // Laser verde do canto superior esquerdo
+      }
+      if (Math.random() < 0.1) {
+        lasers.push(new Laser(canvas.width, 0, 'purple')); // Laser roxo do canto superior direito
+      }
+
+      for (let i = 0; i < lasers.length; i++) {
+        lasers[i].draw();
+      }
     }
 
     let animationId: number;
 
-    const animate = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Add new particles
-      if (Math.random() < 0.3) {
-        particles.push(new Particle(
-          Math.random() * canvas.width,
-          canvas.height + 10
-        ));
-      }
-
-      // Update and draw particles
-      for (let i = particles.length - 1; i >= 0; i--) {
-        const particle = particles[i];
-        particle.update();
-        particle.draw(ctx);
-
-        if (particle.life <= 0) {
-          particles.splice(i, 1);
-        }
-      }
-
-      // Update and draw lasers
-      lasers.forEach(laser => {
-        laser.update();
-        laser.draw(ctx);
-      });
-
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      handleParticles();
+      handleLasers();
       animationId = requestAnimationFrame(animate);
-    };
+    }
 
     animate();
 
